@@ -1,24 +1,24 @@
 <?php
 
-include_once("model/Model.php");
+include_once("model/ModelClub.php");
 
 class ControllerClub extends Controller {
 
-    public $_model;
+    public $_modelClub;
 
     public function __construct() {
-        $this->_model = new Model();
+        $this->_modelClub = new ModelClub();
     }
 
     public function invoke() {
         if (isset($_GET['action'])) {
             switch ($_GET['action']) {
                 case "clubs":
-                    $clubs = $this->_model->getClubList();
+                    $clubs = $this->_modelClub->getAll();
                     include 'view/listeClubs.php';
                     break;
                 case "club":
-                    $club = $this->_model->getClub($_GET['club']);
+                    $club = $this->_modelClub->get($_GET['id']);
                     include 'view/listeLicence.php';
                     break;
                 default:

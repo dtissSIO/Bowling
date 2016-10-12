@@ -15,7 +15,7 @@ spl_autoload_register();
 //Classe Model récupérant les données de la BD
 Abstract Class Model {
 
-    private $_dbConnexion;
+    protected $_dbConnexion;
 
     public function __construct() {
         $this->_dbConnexion = new Database('localhost', 'root', '', 'FFBSQ');

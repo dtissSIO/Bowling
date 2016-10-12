@@ -9,16 +9,20 @@
 
 //autoloader
 /**/
+include_once("model/Club.php");
+include_once("model/Licence.php");
 spl_autoload_extensions(".php");
 spl_autoload_register();
 
 //Classe Model récupérant les données de la BD
 class ModelClub extends Model {
 
-    private $_dbConnexion;
+    //protected $_dbConnexion;
 
     public function __construct() {
         parent::__construct();
+        $this->_dbConnexion = new Database('localhost', 'root', '', 'FFBSQ');
+    
     }
 
     public function get($id) {
@@ -48,4 +52,3 @@ class ModelClub extends Model {
 
 }
 
-?>
