@@ -21,6 +21,11 @@ class ControllerClub extends Controller {
                     $club = $this->_modelClub->get($_GET['id']);
                     include 'view/listeLicence.php';
                     break;
+                case "ajouter":
+                    $this->_modelClub->add($_POST['nom'], $_POST['adresse'], $_POST['email']);
+                    $clubs = $this->_modelClub->getAll();
+                    include 'view/listeClubs.php';
+                    break;
                 default:
                     echo "Erreur";
             }

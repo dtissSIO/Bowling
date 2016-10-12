@@ -50,5 +50,9 @@ class ModelClub extends Model {
         return $listClubs;
     }
 
+    public function add($nom, $adresse, $email) {
+        $this->_dbConnexion->reqUpdate("INSERT INTO club(nom, adresse, email) values('". $nom . "', '". $adresse . "', '". $email . "');");
+    }
+
 }
 

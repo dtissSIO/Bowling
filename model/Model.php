@@ -23,6 +23,7 @@ Abstract Class Model {
     
     public abstract function getAll();
     public abstract function get($id);
+   
   
    }
 

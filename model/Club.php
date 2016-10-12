@@ -19,6 +19,8 @@ class Club {
         $this->adresse = $p_adresse;
         $this->email = $p_email;
     }
+    
+    
 
     public function ajouterLicence($p_laLicence) {
         $this->lesLicences[] = $p_laLicence;
@@ -38,6 +40,10 @@ class Club {
 
     public function getId() {
         return $this->id;
+    }
+    
+     public function getEmail() {
+        return $this->email;
     }
 
 }
